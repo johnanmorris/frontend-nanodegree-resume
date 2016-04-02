@@ -58,13 +58,6 @@ var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineTitle = '<p><br/>%data%</p>';
 var HTMLonlineURL = '<a href="%data%">%data%</a>';
 
-var HTMLotherClasses = '<h3>Other Courses</h3>';
-var HTMLotherTitle = '<p><br/>%data%</p>';
-var HTMLotherSchool = '<h4>%data%</h4>';
-var HTMLotherDates = '<div class="date-text">%data%</div>';
-var HTMLotherLocation = '<div class="location-text">%data%</div>';
-var HTMLotherURL = '<a href="%data%">%data%</a>';
-
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
@@ -136,7 +129,6 @@ function initializeMap() {
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
     education.schools.forEach(function(school){locations.push(school.location);});
-    education.otherCourses.forEach(function(course){locations.push(course.location);});
     // iterates through work locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:

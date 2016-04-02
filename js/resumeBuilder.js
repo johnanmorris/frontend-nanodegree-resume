@@ -1,7 +1,6 @@
 var bio = {
 	"name" : "Johna N. Morris",
 	"role" : "Front-End Developer",
-	"welcomeMessage" : "Hello! ~ Bonjour! ~ Buongiorno!",
 	"contacts": {
 		"mobile": "(702) 406-4349",
 		"email" : "johna.n.morris@gmail.com",
@@ -9,12 +8,14 @@ var bio = {
 		"github" : "johnanmorris",
 		"location" : "Kent, WA"
 	},
+	"welcomeMessage" : "Hello! ~ Bonjour! ~ Buongiorno!",
 	"skills" : [
 		"HTML/CSS",
 		"Python",
 		"JavaScript",
 		"French",
 		"Italian"],
+	"biopic" : "images/me.jpg"
 }
 
 /*
@@ -38,8 +39,9 @@ bio.display = function ()
 	}
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
 	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-	$("#header").prepend(formattedName + formattedRole + formattedWelcomeMsg);
+	$("#header").prepend(formattedName + formattedRole + formattedWelcomeMsg + formattedbioPic);
 	for (contact in bio.contacts)
 	{
 		if (bio.contacts.hasOwnProperty(contact))
@@ -52,6 +54,8 @@ bio.display = function ()
 }
 
 bio.display();
+
+//var HTMLbioPic = '<img src="%data%" class="biopic">';
 
 var work = {
 	"jobs" : [
@@ -199,10 +203,18 @@ var education = {
 		{
 			"name": "Community College of Southern Nevada",
 			"location": "Las Vegas, NV",
-			"degree": "transfer",
+			"degree": "Transfer",
 			"majors": "Anthropology",
 			"dates": "2004-2006",
 			"url" : "https://www.csn.edu"
+		},
+		{
+			"name" : "California State University, San Luis Obispo",
+			"location" : "Santa Barbara, CA",
+			"degree" : "Presidio de Santa Barbara",
+			"majors" : "Archaeological Field School",
+			"dates" : "June 2011-July 2011",
+			"url" : "http://www.sbthp.org/#!field-school/cu4k"
 		}
 	],
 
@@ -213,22 +225,12 @@ var education = {
 			"dates" : "May 2015-April 2016",
 			"url" : "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"
 		}
-	],
-
-	"otherCourses" : [
-		{
-			"title" : "Presidio de Santa Barbara Archaeological Field School",
-			"school" : "California State University, San Luis Obispo",
-			"location" : "Santa Barbara, CA",
-			"dates" : "June 2011-July 2011",
-			"url" : "http://www.sbthp.org/#!field-school/cu4k"
-		}
 	]
 }
 
 /*
 For education.schools, education.onlineCourses, and education.otherCourses,
-formats data from each hash to its respective helper.js string and appends
+formats data from each object to its respective helper.js string and appends
 to the education-entry class
 */
 
@@ -255,19 +257,6 @@ education.display = function()
 		var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
 		var formattedOnlineURL = HTMLonlineURL.replace(/%data%/g, education.onlineCourses[course].url);
 		$(".education-entry:last").append(formattedOnlineSchool + formattedOnlineDates + formattedOnlineTitle + formattedOnlineURL);
-	}
-
-	$("#education").append(HTMLotherClasses);
-
-	for (course in education.otherCourses)
-	{
-		$("#education").append(HTMLschoolStart);
-		var formattedOtherTitle = HTMLotherTitle.replace("%data%", education.otherCourses[course].title);
-		var formattedOtherSchool = HTMLotherSchool.replace("%data%", education.otherCourses[course].school);
-		var formattedOtherLocation = HTMLotherLocation.replace("%data%", education.otherCourses[course].location);
-		var formattedOtherDates = HTMLotherDates.replace("%data%", education.otherCourses[course].dates);
-		var formattedOtherURL = HTMLotherURL.replace(/%data%/g, education.otherCourses[course].url);
-		$(".education-entry:last").append(formattedOtherSchool + formattedOtherDates + formattedOtherLocation + formattedOtherTitle + formattedOtherURL);
 	}
 }
 
