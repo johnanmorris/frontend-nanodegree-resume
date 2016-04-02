@@ -20,6 +20,8 @@ var bio = {
 /*
 Iterates through the bio.skills array to produce a new formattedSkill
 variable to append to the #skills id
+Note: for loop procedure adapted from
+http://stackoverflow.com/questions/5349425/whats-the-fastest-way-to-loop-through-an-array-in-javascript
 Formats helper.js HTML strings from data in bio variable, and prepends
 them to the #header id.
 Iterates through bio.contacts to produce a new formattedContact
