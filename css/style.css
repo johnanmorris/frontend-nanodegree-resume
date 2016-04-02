@@ -1,3 +1,10 @@
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body,
 div,
 ul,
@@ -129,9 +136,8 @@ hr {
 
 #skills-h3 {
   display: none;
-  text-align: left;
+  color: #3F7F55;
 }
-
 
 .footer-title {
   background-color: #FEBB67;
@@ -188,13 +194,15 @@ ul {
 
 .biopic {
   float: left;
-  padding: 10px;
+  padding: 0;
   width: 200px;
   display: none;
 }
 
 img {
-  padding: 10px;
+  padding: 0;
+  border-radius: 10px;
+  border: 1px solid #BF791D;
 }
 
 span {
@@ -238,6 +246,7 @@ span {
   height: 100%;
   margin: 0 5%;
   border: 2px solid #BF791D;
+  border-radius: 10px;
 }
 
 #mapDiv {
